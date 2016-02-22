@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void addFirstData() {
 
+
         //Tester Add Data
 //        manageTABLE.addPlant("nameth", "nameeng", "hprodoc", "hage", "hseason", "hplant",
 //                "data", "dround", "plant", "water", "compost,", "potect", "harvest");
