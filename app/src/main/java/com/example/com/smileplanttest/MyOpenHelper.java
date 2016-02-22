@@ -15,19 +15,19 @@ public class MyOpenHelper extends SQLiteOpenHelper{
     private static final int database_version = 1;
     private static String create_plantTABLE = "create table plantTABLE (" +
             "_id integer primary key, " +
-            "Column1 text" +
-            "Column2 text" +
-            "Column3 text" +
-            "Column4 text" +
-            "Column5 text" +
-            "Column6 text" +
-            "Column7 text" +
-            "Column8 text" +
-            "Column9 text" +
+            "Nameth text" +
+            "Nameeng text" +
+            "Productivity text" +
+            "Age text" +
+            "Season text" +
+            "Data text" +
+            "Plant text" +
+            "Maintenance text" +
+            "Harvest text" +
             "Column10 text" +
             "Column11 text" +
             "Column12 text" +
-            "Column13 text );";
+            "protected text );";
 
     public MyOpenHelper( Context context) {
         super(context, database_name , null ,database_version );
