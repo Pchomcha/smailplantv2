@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         deleteAllSQLite();
 
         //Setup Data   สำหรับข้อมูลที่ไม่สมบูรณ์
-        forSetupData ();
+        forSetupData();
 
     } //main Method
 
@@ -37,8 +37,8 @@ public class MainActivity extends AppCompatActivity {
         //CHeck emty Data
         SQLiteDatabase sqLiteDatabase = openOrCreateDatabase(MyOpenHelper.database_name,
                 MODE_PRIVATE, null);
-        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM "+ ManageTABLE.plant_table, null);
-        if (cursor.getCount() == 0 ) {
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM " + ManageTABLE.plant_table, null);
+        if (cursor.getCount() == 0) {
 
             //ไม่มีข้อมูล
             addFirstData();
@@ -54,6 +54,38 @@ public class MainActivity extends AppCompatActivity {
         //Tester Add Data
 //        manageTABLE.addPlant("nameth", "nameeng", "hprodoc", "hage", "hseason", "hplant",
 //                "data", "dround", "plant", "water", "compost,", "potect", "harvest");
+
+        String[] namethStrings = getResources().getStringArray(R.array.nameth);
+        String[] nameengStrings = getResources().getStringArray(R.array.nameeng);
+        String[] hproducStrings = getResources().getStringArray(R.array.hproduc);
+        String[] hageStrings = getResources().getStringArray(R.array.hage);
+        String[] hseasonStrings = getResources().getStringArray(R.array.hseason);
+        String[] hplantStrings = getResources().getStringArray(R.array.hplant);
+        String[] dataStrings = getResources().getStringArray(R.array.data);
+        String[] groundStrings = getResources().getStringArray(R.array.ground);
+        String[] plantStrings = getResources().getStringArray(R.array.plant);
+        String[] waterStrings = getResources().getStringArray(R.array.water);
+        String[] compostStrings = getResources().getStringArray(R.array.compost);
+        String[] protectStrings = getResources().getStringArray(R.array.protect);
+        String[] harvestStrings = getResources().getStringArray(R.array.harvest);
+
+        for (int i=0; i<namethStrings.length;i++) {
+
+           manageTABLE.addPlant(namethStrings[i],
+                   nameengStrings[i],
+                   hproducStrings[i],
+                   hageStrings[i],
+                   hseasonStrings[i],
+                   hplantStrings[i],
+                   dataStrings[i],
+                   groundStrings[i],
+                   plantStrings[i],
+                   waterStrings[i],
+                   compostStrings[i],
+                   protectStrings[i],
+                   harvestStrings[i]);
+
+        }//for
 
     } //addFirsData
 } //Main class
