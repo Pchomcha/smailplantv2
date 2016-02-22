@@ -18,10 +18,19 @@ public class MainActivity extends AppCompatActivity {
         //Request Database
         manageTABLE = new ManageTABLE(this);
 
+        //Delete AllSQLite ==>ถ้าข้อมูลครบ49 ตัวก็ไม่ต้องลบ
+        deleteAllSQLite();
+
         //Setup Data   สำหรับข้อมูลที่ไม่สมบูรณ์
         forSetupData ();
 
     } //main Method
+
+    private void deleteAllSQLite() {
+        SQLiteDatabase sqLiteDatabase = openOrCreateDatabase(MyOpenHelper.database_name, MODE_PRIVATE, null);
+        sqLiteDatabase.delete(ManageTABLE.plant_table, null, null);
+
+    } //deldteAllSQLite
 
     private void forSetupData() {
 
@@ -42,8 +51,8 @@ public class MainActivity extends AppCompatActivity {
     private void addFirstData() {
 
         //Tester Add Data
-        manageTABLE.addPlant("nameth", "nameeng", "hprodoc", "hage", "hseason", "hplant",
-                "data", "dround", "plant", "water", "compost,", "potect", "harvest");
+//        manageTABLE.addPlant("nameth", "nameeng", "hprodoc", "hage", "hseason", "hplant",
+//                "data", "dround", "plant", "water", "compost,", "potect", "harvest");
 
     } //addFirsData
 } //Main class
